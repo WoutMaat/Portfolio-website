@@ -1,0 +1,10 @@
+Zet hier je profielfoto neer, met de bestandsnaam:
+
+  profile.jpg
+
+(dus: assets/profile.jpg)
+
+Geen foto? Geen probleem — de hero toont dan automatisch je initialen (WM)
+in een gekleurde cirkel als nette fallback.
+
+Tip: gebruik een vierkante of ronde crop, minimaal 400x400px, voor een scherp resultaat.

@@ -1,0 +1,10 @@
+Zet hier de PDF's (of andere bestanden) die je per project downloadbaar wilt maken.
+
+Voorbeeld:
+  downloads/project-1.pdf
+  downloads/project-2.pdf
+
+Verwijs er in index.html naar via:
+  <a href="downloads/project-1.pdf" class="download" download>Download PDF</a>
+
+Zo blijft de hoofdsite licht — grote bestanden staan los in deze map.

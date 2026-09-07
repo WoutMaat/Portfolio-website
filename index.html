@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wout Maat — Portfolio</title>
+  <meta name="description" content="Portfolio van Wout Maat — Minor Future-proof met AI" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__logo">WM</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav__links" id="navLinks">
+        <a href="#over-mij">Over mij</a>
+        <a href="#projecten">Projecten</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero__inner reveal">
+        <div class="hero__text">
+          <p class="eyebrow">Minor Future-proof met AI — 2025/2026</p>
+          <h1>Hoi, ik ben <span class="accent">Wout Maat</span>.</h1>
+          <p class="hero__subtitle">
+            Vierdejaars student CMD, en dit is mijn groeiende portfolio uit de minor
+            Future-proof met AI — waarin ik onderzoek hoe AI mijn creatieve proces kan versterken
+            en hoe ik het kan inzetten om efficiënter te werken en slimme oplossingen te bouwen.
+          </p>
+          <div class="hero__cta">
+            <a href="#projecten" class="btn btn--primary">Bekijk projecten</a>
+            <a href="#contact" class="btn btn--ghost">Neem contact op</a>
+          </div>
+        </div>
+        <div class="hero__photo">
+          <img
+            src="assets/profile.jpg"
+            alt="Foto van Wout Maat"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="hero__photo-fallback">WM</div>
+        </div>
+      </div>
+      <a href="#over-mij" class="scroll-cue" aria-label="Scroll naar beneden">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ OVER MIJ ============ -->
+    <section class="section" id="over-mij">
+      <div class="section__inner reveal">
+        <p class="section__label">Over mij</p>
+        <h2 class="section__title">Vierdejaars student Communication &amp; Multimedia Design</h2>
+        <p class="section__text">
+          Ik ben Wout Maat, vierdejaars CMD-student en momenteel bezig met de minor
+          Future-proof met AI. In deze minor onderzoek en leer ik hoe AI het creatieve
+          proces kan versterken: van het snel verkennen van ideeën tot het bouwen van
+          slimme, werkende oplossingen. Daarnaast kijk ik hoe AI mij kan helpen om
+          efficiënter te werken, zodat er meer tijd overblijft voor het echte ontwerp-
+          en denkwerk. Op deze pagina verzamel ik de projecten en inzichten die daaruit
+          voortkomen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTEN ============ -->
+    <section class="section section--alt" id="projecten">
+      <div class="section__inner reveal">
+        <p class="section__label">Projecten</p>
+        <h2 class="section__title">Wat ik tot nu toe heb gemaakt</h2>
+        <p class="section__text section__text--intro">
+          Elke paar weken voeg ik hier een nieuw project uit de minor toe.
+        </p>
+
+        <div class="projects">
+
+          <!-- ===== PROJECT TEMPLATE — kopieer dit hele <article> blok om een nieuw project toe te voegen ===== -->
+          <article class="project-card">
+            <div class="project-card__meta">
+              <span class="project-card__week">Week 1–2</span>
+              <span class="project-card__tag">Onderzoek</span>
+            </div>
+            <h3 class="project-card__title">[Projectnaam]</h3>
+            <p class="project-card__desc">
+              [Korte beschrijving: wat was de opdracht, wat heb je gemaakt of onderzocht,
+              en wat heb je geleerd? 2–4 zinnen.]
+            </p>
+            <div class="project-card__actions">
+              <!-- Geen bestand voor dit project? Verwijder dan de <a class="download"> regel hieronder. -->
+              <a href="downloads/project-1.pdf" class="download" download>
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                  <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Download PDF
+              </a>
+            </div>
+          </article>
+          <!-- ===== EINDE TEMPLATE ===== -->
+
+          <article class="project-card project-card--placeholder">
+            <div class="project-card__meta">
+              <span class="project-card__week">Week 3–4</span>
+              <span class="project-card__tag">Binnenkort</span>
+            </div>
+            <h3 class="project-card__title">Volgend project</h3>
+            <p class="project-card__desc">
+              Kopieer het blok hierboven om je volgende project toe te voegen.
+              Zie README.md voor instructies.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section__inner reveal">
+        <p class="section__label">Skills</p>
+        <h2 class="section__title">Waar ik mee werk</h2>
+        <ul class="skills">
+          <li>Creativiteit</li>
+          <li>Vibecoden</li>
+          <li>Brainstormen</li>
+          <li>Webdesign</li>
+          <li>UX/UI Design</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--alt" id="contact">
+      <div class="section__inner reveal">
+        <p class="section__label">Contact</p>
+        <h2 class="section__title">Vragen of feedback?</h2>
+        <p class="section__text">
+          Neem gerust contact op — ik hoor graag wat je van mijn projecten vindt.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:[jouw.email@voorbeeld.nl]">[jouw.email@voorbeeld.nl]</a>
+          <a href="https://linkedin.com/in/[jouw-profiel]" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/[jouw-profiel]" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Wout Maat — gemaakt voor de minor Future-proof met AI!</p>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Terug naar boven">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
