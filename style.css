@@ -341,6 +341,10 @@ img {
   align-items: center;
 }
 
+.intro-split--reverse {
+  grid-template-columns: 270px minmax(0, 1fr);
+}
+
 .intro-split__media {
   margin: 0;
 }
@@ -360,6 +364,11 @@ img {
   .intro-split__media {
     max-width: 240px;
     margin: 0 auto;
+  }
+
+  /* Op mobiel altijd eerst de tekst, dan de afbeelding */
+  .intro-split--reverse .intro-split__media {
+    order: 2;
   }
 }
 
