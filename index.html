@@ -85,39 +85,58 @@
 
         <div class="projects">
 
-          <!-- ===== PROJECT TEMPLATE — kopieer dit hele <article> blok om een nieuw project toe te voegen ===== -->
-          <article class="project-card">
-            <div class="project-card__meta">
-              <span class="project-card__week">Week 1–2</span>
-              <span class="project-card__tag">Onderzoek</span>
+          <!-- ===== PROJECT TEMPLATE — kopieer dit hele <a> blok om een nieuw project toe te voegen =====
+               1. Maak een map projects/sprint-X/
+               2. Zet er een cover.jpg in (16:10) — verschijnt automatisch in de tegel hieronder
+               3. Kopieer projects/_template.html naar projects/sprint-X/index.html en vul in
+               4. Pas hieronder de href, week, tag, titel en beschrijving aan -->
+          <a href="projects/sprint-1/index.html" class="project-card">
+            <div class="project-card__cover">
+              <img src="projects/sprint-1/cover-laptop.png" alt="" onerror="this.remove();" />
             </div>
-            <h3 class="project-card__title">[Projectnaam]</h3>
-            <p class="project-card__desc">
-              [Korte beschrijving: wat was de opdracht, wat heb je gemaakt of onderzocht,
-              en wat heb je geleerd? 2–4 zinnen.]
-            </p>
-            <div class="project-card__actions">
-              <!-- Geen bestand voor dit project? Verwijder dan de <a class="download"> regel hieronder. -->
-              <a href="downloads/project-1.pdf" class="download" download>
-                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-                  <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Download PDF
-              </a>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-card__week">Week 1–2</span>
+                
+              </div>
+              <h3 class="project-card__title">Sprint 1: portfolio website bouwen & leren werken met Claude Code</h3>
+              <p class="project-card__desc">
+                De start: dit portfolio zelf opzetten als plek om elke sprint te laten zien
+                wat ik heb onderzocht, gemaakt en geleerd.
+              </p>
             </div>
-          </article>
-          <!-- ===== EINDE TEMPLATE ===== -->
+          </a>
+
+          <a href="projects/sprint-2/index.html" class="project-card">
+            <div class="project-card__cover">
+              <img src="projects/sprint-2/cover.jpg" alt="" onerror="this.remove();" />
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-card__week">Week 3–4</span>
+              </div>
+              <h3 class="project-card__title">Sprint 2: De applicatie ''Forge''' & de planner voor LOT's</h3>
+              <p class="project-card__desc">
+                De portfoliotracker ''Forge'' en een werkend prototype voor een digitale weekagenda voor tweedehandswinkel LOT's, als vervanging van de telefonische afspraken.
+              </p>
+            </div>
+          </a>
 
           <article class="project-card project-card--placeholder">
-            <div class="project-card__meta">
-              <span class="project-card__week">Week 3–4</span>
-              <span class="project-card__tag">Binnenkort</span>
+            <div class="project-card__cover">
+              <img src="projects/sprint-3/cover.jpg" alt="" onerror="this.remove();" />
             </div>
-            <h3 class="project-card__title">Volgend project</h3>
-            <p class="project-card__desc">
-              Kopieer het blok hierboven om je volgende project toe te voegen.
-              Zie README.md voor instructies.
-            </p>
+            <div class="project-card__body">
+              <div class="project-card__meta">
+                <span class="project-card__week">Week 5–6</span>
+                <span class="project-card__tag">Binnenkort</span>
+              </div>
+              <h3 class="project-card__title">Sprint 3: portfolio tracker</h3>
+              <p class="project-card__desc">
+                Kopieer het blok hierboven om dit project toe te voegen zodra het klaar is.
+                Zie README.md voor instructies.
+              </p>
+            </div>
           </article>
 
         </div>
