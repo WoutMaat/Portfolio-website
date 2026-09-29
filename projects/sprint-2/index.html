@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sprint 2: de planner voor LOT's — Wout Maat</title>
-  <meta name="description" content="Onderzoek en een werkend prototype voor een digitale weekagenda bij tweedehandswinkel LOT's Arnhem." />
+  <title>Sprint 2: Forge &amp; de planner voor LOT's — Wout Maat</title>
+  <meta name="description" content="Portfolio tracker Forge als app voor mobiel en laptop met GitHub en Supabase, en een werkend prototype voor een digitale weekagenda bij LOT's Arnhem." />
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -15,7 +15,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="project-page">
 
     <section class="section" style="padding-top: 0;">
       <div class="section__inner reveal">
@@ -24,9 +24,41 @@
           <span class="project-card__tag">Prototype</span>
         </div>
         <div class="project-hero">
-          <h1>Sprint 2: de planner voor LOT's & onderzoek naar de impact van AI in mijn vakgebied</h1>
-          <p class="project-hero__lede">Een digitale weekagenda voor tweedehandswinkel LOT's en een kort verslag van onderzoek wat ik heb gedaan naar de impact van AI op mij als designer.</p>
+          <h1>Sprint 2: Forge &amp; de planner voor LOT's</h1>
+          <p class="project-hero__lede">Mijn portfolio tracker Forge omgebouwd tot een echte app voor mobiel en laptop, plus een digitale weekagenda voor tweedehandswinkel LOT's.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner reveal intro-split">
+        <div class="intro-split__text">
+        <p class="section__label">In het kort</p>
+        <h2 class="section__title">Van losse webpagina naar een app die ik elke dag gebruik</h2>
+        <p class="section__text">
+          Deze sprint draaide vooral om <strong>Forge</strong>, mijn eigen portfolio tracker. Ik had
+          al een simpele versie waarin ik mijn ETF, aandelen en crypto bijhield, maar die werkte
+          alleen op mijn laptop en zag er nog vrij basic uit. Samen met Claude Code heb ik er een
+          volwaardige app van gemaakt: een nieuw, rustiger design met een zijbalk, live koersen,
+          een groeigrafiek met een projectie naar mijn volgende mijlpaal, en een knop waarmee ik
+          al mijn bedragen in één keer verberg als er iemand meekijkt.
+        </p>
+        <p class="section__text">
+          Het leukste stuk: Forge draait nu als echte app op mijn telefoon. De code staat op
+          <strong>GitHub</strong> en wordt via GitHub Pages online gezet, dus ik kan hem gewoon op mijn
+          beginscherm zetten, met een eigen icoon. Met <strong>Supabase</strong> heb ik er een database
+          met een login aan gekoppeld. Pas ik iets aan op mijn laptop, dan staat het een paar
+          seconden later ook op mijn telefoon.
+        </p>
+        <p class="section__text">
+          Daarnaast bouwde ik een werkend prototype voor LOT's: een weekagenda waarmee klanten
+          zelf een week kiezen om kleding in te brengen, in plaats van te bellen. Daarover
+          verderop meer.
+        </p>
+        </div>
+        <figure class="intro-split__media">
+          <img src="forge-mockup.png" alt="Forge op een iPhone: het dashboard met totaal vermogen, assets, spaargeld en de volgende mijlpaal" width="520" height="1000" />
+        </figure>
       </div>
     </section>
 
@@ -44,7 +76,74 @@
 
     <section class="section section--alt">
       <div class="section__inner reveal">
-        <p class="section__label">Wat ik heb gedaan</p>
+        <p class="section__label">Hoe ik het heb aangepakt</p>
+        <h2 class="section__title">Forge: bouwen, testen, gebruiken, verbeteren</h2>
+        <p class="section__text">
+          Ik begon niet met "maak mijn app mooier", maar met een uitgebreide opdracht: wat er
+          moest blijven werken, hoe het design moest voelen, welke nieuwe functies ik wilde en
+          welke bugs ik al kende. Ik liet Claude eerst vragen stellen en een plan maken, en pas
+          na mijn akkoord bouwen. Dat klinkt als extra werk, maar het voorkwam veel verkeerde
+          aannames. Zo kwam bijvoorbeeld naar boven dat mijn data op mijn laptop en telefoon
+          helemaal niet hetzelfde zou zijn zonder een online database.
+        </p>
+        <h3 class="section__subtitle">Een echte app op mijn telefoon</h3>
+        <p class="section__text">
+          Forge is één HTML-bestand, zonder server. GitHub Pages zet dat bestand gratis online,
+          en met een manifest en app-iconen kun je de site op je beginscherm installeren. Hij opent
+          dan zonder adresbalk, net als een gewone app. Voor de data gebruik ik Supabase: een
+          database met een login, waarbij de beveiliging in de database zelf zit (Row Level
+          Security). Alleen mijn account kan mijn gegevens lezen of wijzigen, ook al staat de
+          publieke sleutel gewoon in de code op GitHub. Nieuwe aanmeldingen heb ik uitgezet,
+          zodat het project echt alleen van mij is.
+        </p>
+        <h3 class="section__subtitle">Verbeteren door het zelf te gebruiken</h3>
+        <p class="section__text">
+          De beste verbeterpunten kwamen pas toen ik Forge dagelijks op mijn telefoon gebruikte.
+          Ik wilde mijn posities zien zoals in Trading 212, met koers en winst of verlies in euro's,
+          dus dat hebben we erin gezet. Ik wilde bijhouden of mijn verdeling tussen kern (mijn
+          wereldwijde ETF) en satelliet (de risicovollere posities) nog op 80/20 staat, dus
+          Forge rekent nu uit hoeveel ik moet bijkopen om weer op doel te komen. En het oude
+          logo maakte plaats voor een hamer die op een aambeeld slaat, want "forge" komt van
+          smeden.
+        </p>
+        <p class="section__text">
+          Niet alles ging in één keer goed. Tijdens het testen bleek bijvoorbeeld dat de gratis
+          koersdienst voor crypto je tijdelijk blokkeert als je te vaak ververst. De oplossing:
+          Forge haalt nu hooguit eens per vijf minuten nieuwe koersen op en valt terug op de
+          laatst bekende koers als het even niet lukt.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Wat ik heb geleerd</p>
+        <h2 class="section__title">AI bouwt snel, maar ik stuur</h2>
+        <p class="section__text">
+          <strong>Een goede opdracht is het halve werk.</strong> Hoe duidelijker ik beschreef wat ik
+          wilde en waarom, hoe beter het resultaat. Door AI eerst vragen te laten stellen, kwam ik
+          zelf ook scherper te staan wat ik eigenlijk wilde.
+        </p>
+        <p class="section__text">
+          <strong>Ik snap nu hoe een web-app met een backend in elkaar zit.</strong> Het verschil
+          tussen een publieke en een geheime sleutel, waarom beveiliging in de database hoort te
+          zitten en niet in de pagina, en hoe twee apparaten dezelfde data kunnen delen. Ik heb
+          me bewust laten uitleggen hoe de code werkt, bijvoorbeeld de berekening achter het
+          80/20-advies, zodat ik niet alleen een werkende app heb, maar ook begrijp waarom hij
+          werkt.
+        </p>
+        <p class="section__text">
+          <strong>De laatste tien procent kost de meeste aandacht.</strong> Een app die in de
+          browser werkt, is nog geen app die fijn werkt op je telefoon. Denk aan inzoomen dat je
+          niet wilt, een icoon dat je telefoon onthoudt, of een externe dienst die ineens
+          blokkeert. Die dingen vind je alleen door het echt te gebruiken en kritisch te blijven.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">De planner voor LOT's</p>
         <h2 class="section__title">Van telefoontje naar zelfbediening</h2>
         <p class="section__text">
           LOT's Arnhem werkt met weekafspraken: klanten spreken geen dag of tijd af, maar een
@@ -101,6 +200,24 @@
               <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
           </div>
+        </div>
+        <div class="lu-explain">
+          <p>
+            <strong>LU2 · Praktijkoplossing.</strong> Forge is geen oefenproject maar een app die ik
+            elke dag gebruik om mijn beleggingen bij te houden, op laptop én telefoon. De planner
+            voor LOT's lost een echt probleem op voor een bestaande winkel: afspraken maken zonder
+            te hoeven bellen.
+          </p>
+          <p>
+            <strong>LU4 · AI-tools.</strong> Ik heb Claude Code ingezet om te ontwerpen, te bouwen,
+            te testen en code uit te leggen, en ik heb het gecombineerd met GitHub en Supabase.
+            Daarbij stuurde ik zelf: eerst vragen en een plan, dan bouwen, en elke stap controleren.
+          </p>
+          <p>
+            <strong>LU5 · Zelfsturend werken.</strong> Ik heb zelf bepaald wat Forge moest kunnen,
+            op basis van hoe ik de app echt gebruik. Ik heb zelf keuzes gemaakt in design en
+            techniek, en ben blijven verbeteren tot het werkte zoals ik wilde.
+          </p>
         </div>
       </div>
     </section>

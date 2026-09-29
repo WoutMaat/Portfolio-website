@@ -305,6 +305,83 @@ img {
   margin-bottom: 40px;
 }
 
+.section__text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.section__subtitle {
+  margin: 36px 0 4px;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+/* Projectpagina's: compacter dan de homepage */
+.project-page .section {
+  padding-block: clamp(40px, 6vw, 72px);
+}
+
+.project-page .section:first-child {
+  padding-bottom: 8px;
+}
+
+.project-page .section__text {
+  margin: 0 0 14px;
+}
+
+.project-page .section__subtitle {
+  margin-top: 28px;
+}
+
+/* Intro met een afbeelding ernaast (valt op mobiel onder de tekst) */
+.intro-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 270px;
+  gap: 48px;
+  align-items: center;
+}
+
+.intro-split__media {
+  margin: 0;
+}
+
+.intro-split__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .intro-split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .intro-split__media {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+}
+
+/* Korte uitleg per leeruitkomst, onder de LU-pillen */
+.lu-explain {
+  display: grid;
+  gap: 14px;
+  max-width: 640px;
+  margin-top: 32px;
+}
+
+.lu-explain p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.lu-explain strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 /* ============ PROJECTS ============ */
 
 .projects {
