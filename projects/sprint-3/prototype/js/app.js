@@ -106,15 +106,14 @@
     return h('div', { class: 'shell' },
       h('a', { class: 'skip', href: '#main', onclick(e) { e.preventDefault(); document.getElementById('main').focus(); } }, 'Naar inhoud'),
       h('aside', { class: 'sidebar' },
-        h('div', { class: 'brand' }, U.logo('logo'), h('span', null, 'ICT Campus Foodvalley')),
+        h('div', { class: 'brand' }, U.logo('logo', ''), h('span', null, 'ICT Campus Foodvalley')),
         h('nav', { 'aria-label': 'Hoofdmenu' }, sideItems.map((i) => navLink(i, activeNav))),
         h('div', { class: 'side-foot' },
           h('p', { class: 'who' }, user.naam, h('small', null, user.rol === 'beheerder' ? 'Beheerder' : 'Medewerker')),
           h('button', { class: 'btn ghost light', type: 'button', onclick: logout }, U.icon('logout', 20), 'Uitloggen'))),
       h('div', { class: 'content' },
         h('header', { class: 'topbar' },
-          h('div', { class: 'brand-mobile' }, U.logo('logo'), h('span', null, 'Urenregistratie')),
-          h('div', { class: 'demo-wrap' }, h('span', { class: 'demo-label' }, 'Demo:'), demoSelect)),
+          h('div', { class: 'brand-mobile' }, U.logo('logo'), h('span', null, 'Urenregistratie')),          h('div', { class: 'demo-wrap' }, h('span', { class: 'demo-label' }, 'Demo:'), demoSelect)),
         h('main', { id: 'main', tabindex: '-1' }, content)),
       h('nav', { class: 'bottom-nav', 'aria-label': 'Hoofdmenu' }, bottomItems.map((i) => navLink(i, bottomActive))));
   }

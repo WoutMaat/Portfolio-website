@@ -262,8 +262,8 @@ th { color: var(--navy); background: #f3f5f2; white-space: nowrap; }
 .auth-brand { text-align: center; margin-bottom: var(--s5); }
 .auth-card h1 { margin-bottom: var(--s1); }
 .auth-card .muted { margin-bottom: var(--s5); }
-.logo { height: 28px; width: auto; }
-.logo.big { height: 64px; }
+.logo { height: 28px; width: auto; }                 /* alleen de bogen: balk en zijbalk */
+.logo-full { height: 104px; width: auto; max-width: 100%; } /* volledig logo met tekst: inlogscherm */
 .brand-name { color: var(--navy); font-weight: 800; margin: var(--s2) 0 0; }
 .demo { margin-top: var(--s6); padding-top: var(--s5); border-top: 1px dashed var(--line); }
 .demo h2 { font-size: .95rem; }

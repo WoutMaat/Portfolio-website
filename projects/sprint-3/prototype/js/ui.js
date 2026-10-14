@@ -86,9 +86,21 @@
     return wrapper;
   };
 
-  // Vervang door assets/logo.png zodra het echte logo van de website is geplaatst.
-  U.LOGO_SRC = 'assets/logo.svg';
-  U.logo = (className) => U.h('img', { src: U.LOGO_SRC, alt: 'ICT Campus Foodvalley', class: className || 'logo' });
+  // Het logo van ICT Campus Foodvalley, in twee varianten:
+  //   logo.png      het volledige logo mét tekst (groot gebruik, zoals het inlogscherm)
+  //   logo-icon.png alleen de regenboogbogen (kleine plekken: balk, zijbalk, tabblad)
+  U.LOGO_SRC = 'assets/logo.png';
+  U.LOGO_ICON_SRC = 'assets/logo-icon.png';
+  const LOGO_ALT = 'ICT Campus Foodvalley';
+
+  /** Het volledige logo met tekst. */
+  U.logoFull = (className) => U.h('img', { src: U.LOGO_SRC, alt: LOGO_ALT, class: className || 'logo-full' });
+
+  /**
+   * Alleen de bogen. Staat de naam al als tekst ernaast, geef dan alt = '' mee zodat
+   * schermlezers het niet dubbel voorlezen.
+   */
+  U.logo = (className, alt = LOGO_ALT) => U.h('img', { src: U.LOGO_ICON_SRC, alt, class: className || 'logo' });
 
   // Regenboogkleuren uit het logo; alleen gebruikt als klein stipje bij een project.
   const PROJECT_COLORS = ['#4AABE1', '#006BA6', '#75BD7C', '#009F57', '#F8B000', '#EE7203', '#E52B12'];

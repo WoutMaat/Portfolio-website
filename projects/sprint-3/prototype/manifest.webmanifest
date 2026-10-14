@@ -7,6 +7,6 @@
   "theme_color": "#011049",
   "lang": "nl",
   "icons": [
-    { "src": "assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "assets/logo-icon.png", "sizes": "495x250", "type": "image/png", "purpose": "any" }
   ]
 }

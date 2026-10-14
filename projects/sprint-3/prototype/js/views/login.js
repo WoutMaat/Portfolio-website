@@ -9,13 +9,11 @@
   'use strict';
   const { h } = U;
 
-  /** Gedeelde omlijsting: logo bovenaan in een witte kaart op de gradient-achtergrond. */
+  /** Gedeelde omlijsting: het volledige logo bovenaan in een witte kaart op de gradient-achtergrond. */
   function authLayout(...content) {
     return h('main', { class: 'auth', id: 'main' },
       h('div', { class: 'auth-card' },
-        h('div', { class: 'auth-brand' },
-          U.logo('logo big'),
-          h('p', { class: 'brand-name' }, 'ICT Campus Foodvalley')),
+        h('div', { class: 'auth-brand' }, U.logoFull('logo-full')),
         ...content));
   }
 
