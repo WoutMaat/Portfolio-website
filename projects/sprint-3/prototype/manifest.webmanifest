@@ -1,0 +1,12 @@
+{
+  "name": "Urenregistratie – ICT Campus Foodvalley",
+  "short_name": "Uren",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#EAECE6",
+  "theme_color": "#011049",
+  "lang": "nl",
+  "icons": [
+    { "src": "assets/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

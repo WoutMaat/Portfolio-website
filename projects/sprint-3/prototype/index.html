@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Urenregistratie – ICT Campus Foodvalley</title>
+  <meta name="theme-color" content="#011049">
+  <meta name="description" content="Prototype urenregistratie voor ICT Campus Foodvalley">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>Deze app heeft JavaScript nodig.</noscript>
+
+  <!-- De hele interface wordt door js/app.js in #app getekend. -->
+  <div id="app"></div>
+  <!-- Korte meldingen (toasts); aria-live zodat schermlezers ze voorlezen. -->
+  <div id="toasts" role="status" aria-live="polite"></div>
+
+  <!--
+    Geen buildstap: gewone scripts die elk één global (U, Seed, Store, PDF, Exports, V, Views,
+    App) neerzetten. De volgorde is belangrijk: een bestand mag alleen gebruiken wat er
+    eerder in deze lijst staat.
+  -->
+  <script src="js/ui.js"></script>
+  <script src="js/seed.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/pdf.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/views/common.js"></script>
+  <script src="js/views/login.js"></script>
+  <script src="js/views/home.js"></script>
+  <script src="js/views/log.js"></script>
+  <script src="js/views/myhours.js"></script>
+  <script src="js/views/meetings.js"></script>
+  <script src="js/views/projects.js"></script>
+  <script src="js/views/overview.js"></script>
+  <script src="js/views/users.js"></script>
+  <script src="js/views/more.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sprint 3: urenregistratie voor ICT Campus Foodvalley — Wout Maat</title>
+  <meta name="description" content="Een mobiel prototype waarmee medewerkers van ICT Campus Foodvalley hun uren schrijven en meetings met één vinkje verantwoorden voor de subsidie." />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+
+  <header class="project-header">
+    <div class="project-header__inner">
+      <a href="../../index.html#projecten" class="back-link">&larr; Portfolio</a>
+    </div>
+  </header>
+
+  <main class="project-page">
+
+    <!-- ============ TITEL ============ -->
+    <section class="section" style="padding-top: 0;">
+      <div class="section__inner reveal">
+        <div class="project-hero__meta">
+          <span class="project-card__week">Week 5–6</span>
+          <span class="project-card__tag">Prototype</span>
+        </div>
+        <div class="project-hero">
+          <h1>Sprint 3: urenregistratie voor ICT Campus Foodvalley</h1>
+          <p class="project-hero__lede">Een mobiel prototype waarmee medewerkers hun uren schrijven en meetings met één vinkje verantwoorden voor de subsidie, in plaats van een Excelsheet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IN HET KORT ============ -->
+    <section class="section">
+      <div class="section__inner reveal intro-split">
+        <div class="intro-split__text">
+          <p class="section__label">In het kort</p>
+          <h2 class="section__title">Van Excelsheet naar uren schrijven in drie tikken</h2>
+          <p class="section__text">
+            ICT Campus Foodvalley in Veenendaal werkt met subsidies en moet kunnen verantwoorden waar
+            uren heen gaan. Medewerkers schrijven die uren nu in een Excelsheet. De opdracht: een app
+            die dat <strong>zo makkelijk mogelijk</strong> maakt, op de telefoon, voor een klein groepje
+            mensen.
+          </p>
+          <p class="section__text">
+            Ik heb een werkend prototype gebouwd. Een medewerker kiest een project, geeft het aantal
+            uren aan en slaat op. Het uurtarief volgt automatisch uit zijn rol op dat project. Daarnaast
+            kunnen deelnemers van een meeting met één vinkje bevestigen dat ze erbij waren, en
+            rolt daar een PDF uit die als bewijslast voor de subsidie dient.
+          </p>
+        </div>
+        <figure class="intro-split__media">
+          <img src="home-mockup.png" alt="De urenregistratie op een iPhone: het startscherm met de melding 'Was je erbij?' en de knop Uren schrijven" width="520" height="1000" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HET PROTOTYPE ============ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Het prototype</p>
+        <figure style="margin: 0;">
+          <img src="cover.png" alt="Drie schermen van de urenregistratie: uren schrijven, het startscherm en een meeting met aanwezigheid" style="display: block; width: 100%; height: auto; border-radius: var(--radius);" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ AANPAK ============ -->
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">Hoe ik het heb aangepakt</p>
+        <h2 class="section__title">Eerst begrijpen wat er echt nodig is, dan bouwen</h2>
+        <p class="section__text">
+          Ik begon met een meeting met de opdrachtgever, voorbereid met een vragenlijst over
+          gebruikers, de huidige Excelsheet, subsidies, uren invoeren, exporteren en techniek. Het
+          gesprek nam ik op en liet ik transcriberen, maar die transcriptie was slecht verstaanbaar.
+          Daarom heb ik mijn aantekeningen bewust opgesplitst in wat de opdrachtgever wil, wat we
+          hebben afgesproken en wat nog <em>te bevestigen</em> is, bijvoorbeeld of het om één subsidie
+          met meerdere projecten gaat en wie meetings aanmaakt.
+        </p>
+        <h3 class="section__subtitle">Van aantekeningen naar een bouwprompt</h3>
+        <p class="section__text">
+          Op basis daarvan heb ik beslissingen vastgelegd: een webapp voor de telefoon in plaats van
+          een app store-app, inloggen met e-mail en wachtwoord op uitnodiging, en twee rollen
+          (medewerker en beheerder) waarbij de toegangsregels later in de database worden afgedwongen.
+          Daarna schreef ik een uitgebreide bouwprompt met het datamodel, de schermen, de huisstijl en
+          de acceptatiecriteria. Alles wat ik zelf had ingevuld zonder dat het zeker was, markeerde ik
+          als aanname, zodat ik die aan de opdrachtgever kon voorleggen.
+        </p>
+        <h3 class="section__subtitle">Bouwen met Claude Code, in stappen</h3>
+        <p class="section__text">
+          Het prototype is in stappen gebouwd met Claude Code: eerst de datalaag en toegangsregels,
+          dan uren schrijven, projecten en tarieven, meetings en de PDF, en als laatste het overzicht
+          en de export. De data staat nu in de browser, achter één dun bestand, zodat er later een
+          echte database (Supabase) in geschoven kan worden zonder de schermen te herschrijven.
+          Het uurtarief wordt bij het schrijven vastgelegd, zodat een tariefwijziging oude uren niet
+          verandert. Dat is precies wat je voor een subsidieverantwoording nodig hebt.
+        </p>
+        <p class="section__text">
+          Zelf getest heb ik op een telefoonbreedte van 375 pixels en op desktop. Ik heb gecontroleerd
+          of een medewerker echt niets van andermans uren kan zien of wijzigen, of de PDF netjes op
+          A4 past, en of de kleuren van de huisstijl voldoende contrast hebben. Dat laatste bleek niet
+          zo: witte tekst op het groen van de website haalt de norm niet, dus knoppen kregen een
+          donkerder groen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ GELEERD ============ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Wat ik heb geleerd</p>
+        <h2 class="section__title">Onzekerheid benoemen is ook een resultaat</h2>
+        <p class="section__text">
+          <strong>Maak je aannames zichtbaar.</strong> Met een slechte transcriptie kon ik niet alles
+          zeker weten. Door aannames te markeren en een lijst vragen voor de opdrachtgever mee te
+          leveren, voorkom ik dat het prototype stilzwijgend iets anders doet dan gewenst.
+        </p>
+        <p class="section__text">
+          <strong>Een prototype is geen product.</strong> Inloggen, e-mail, back-ups en een echte
+          database ontbreken bewust. Het helpt om vooraf op te schrijven wat er voor een productieversie
+          nog mist, zodat het duidelijk blijft wat de opdrachtgever te zien krijgt.
+        </p>
+        <p class="section__text">
+          <strong>Makkelijk voor de gebruiker betekent veel keuzes maken voor de gebruiker.</strong>
+          Standaard het laatst gebruikte project, snelknoppen voor uren en een tarief dat je niet kunt
+          kiezen: elke optie die weg is, scheelt een tik. Dat is minder flexibel, maar precies wat de
+          opdrachtgever vroeg.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ETHIEK & DATA ============ -->
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">Ethiek &amp; data</p>
+        <h2 class="section__title">Welke gegevens zijn gevoelig, en hoe ga ik er verantwoord mee om?</h2>
+        <p class="section__text">
+          Een urenregistratie lijkt onschuldig, maar bevat namen, werktijden en uurtarieven. Dat
+          laatste lijkt sterk op loongegevens: niet iedereen hoeft te zien wat een collega
+          verdient. Daarom heb ik vooraf nagedacht over wat ik met die gegevens doe, en wat ik
+          bewust niet doe.
+        </p>
+        <h3 class="section__subtitle">Wat ik met AI heb gedeeld</h3>
+        <p class="section__text">
+          Bij het bouwen met Claude Code heb ik <strong>geen persoonlijke of gevoelige gegevens</strong>
+          gedeeld. De AI werkte met de wensen en werkwijze van de opdrachtgever, niet met echte
+          medewerkers, uren of tarieven. Alle namen, uren en tarieven in het prototype zijn verzonnen.
+          Het geanonimiseerde Excelbestand van de opdrachtgever is pas bruikbaar als het binnen is, en
+          ook dan geldt: eerst kijken of het echt anoniem is voordat het ergens in een AI-tool terechtkomt.
+        </p>
+        <h3 class="section__subtitle">Wat ik in het prototype heb ingebouwd</h3>
+        <p class="section__text">
+          Een medewerker ziet en wijzigt alleen zijn eigen uren; een beheerder ziet alles. Die regels
+          zitten in de datalaag, zodat ze later één-op-één naar de database kunnen. Het uurtarief wordt
+          bij het schrijven vastgelegd en een medewerker kan het niet zelf kiezen of aanpassen. Op de
+          meeting-PDF, die ook als bewijs naar buiten kan, staan bewust geen tarieven. En bij
+          "wachtwoord vergeten" meldt de app niet of een e-mailadres bekend is, zodat niemand kan
+          uitzoeken wie er een account heeft.
+        </p>
+        <h3 class="section__subtitle">Wat er voor een echte versie moet gebeuren</h3>
+        <p class="section__text">
+          Veilig omgaan met data is hier nog deels een plan, geen resultaat. Voor productie kies ik
+          een database in een EU-regio, inloggen alleen op uitnodiging en toegangsregels die de
+          database zelf afdwingt, zodat ze niet te omzeilen zijn via de app. Ook moet duidelijk
+          zijn wie verantwoordelijk is voor de gegevens (de opdrachtgever), welke afspraken er zijn met
+          de partijen die de data verwerken, en hoe lang uren bewaard moeten worden. Dat laatste staat
+          als open vraag voor de opdrachtgever in mijn lijst; de rest moet nog worden uitgezocht.
+        </p>
+        <h3 class="section__subtitle">AI-uitvoer blijft mijn verantwoordelijkheid</h3>
+        <p class="section__text">
+          Dat de AI de code schrijft, betekent niet dat ik het niet hoef te controleren. Juist de
+          toegangsregels heb ik zelf getest: kan een medewerker andermans uren zien, wijzigen of
+          verwijderen? Daarbij bleef het niet bij vertrouwen op wat de AI zei dat het deed.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ LEERUITKOMSTEN ============
+         lu-pill--done = aangetoond; lu-pill--approved erbij zodra een docent het heeft goedgekeurd. -->
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">Leeruitkomsten</p>
+        <h2 class="section__title">Wat deze sprint aantoont</h2>
+        <div class="lu-grid">
+          <div class="lu-pill">
+            <span class="lu-pill__mark">1</span>
+            <span><span class="lu-pill__code">LU1 — AI Impact</span><span class="lu-pill__label">AI-impact op de beroepspraktijk analyseren</span></span>
+            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <div class="lu-pill lu-pill--done">
+            <span class="lu-pill__mark">2</span>
+            <span><span class="lu-pill__code">LU2 — AI Praktijkoplossing</span><span class="lu-pill__label">Praktijkgerichte AI-oplossing ontwerpen &amp; realiseren</span></span>
+            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <div class="lu-pill lu-pill--done">
+            <span class="lu-pill__mark">3</span>
+            <span><span class="lu-pill__code">LU3 — AI Ethiek</span><span class="lu-pill__label">Ethiek en verantwoord AI-gebruik beoordelen</span></span>
+            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <div class="lu-pill lu-pill--done">
+            <span class="lu-pill__mark">4</span>
+            <span><span class="lu-pill__code">LU4 — AI Tools</span><span class="lu-pill__label">AI-tools en technieken gebruiken</span></span>
+            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+          <div class="lu-pill lu-pill--done">
+            <span class="lu-pill__mark">5</span>
+            <span><span class="lu-pill__code">LU5 — Zelfsturend werken</span><span class="lu-pill__label">Zelfstandig en zelfsturend werken</span></span>
+            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
+              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </div>
+        <div class="lu-explain">
+          <p>
+            <strong>LU2 · Praktijkoplossing.</strong> Het prototype lost een echt probleem op voor een
+            echte opdrachtgever: uren verantwoorden voor een subsidie zonder Excelsheet, inclusief een
+            PDF als bewijslast per meeting.
+          </p>
+          <p>
+            <strong>LU3 · Ethiek.</strong> Ik heb beoordeeld welke gegevens in dit project gevoelig
+            zijn (namen, uren en tarieven), wat ik wel en niet met AI deel, en welke maatregelen
+            nodig zijn voor een echte versie. Daarbij heb ik ook benoemd wat nog niet geregeld is.
+          </p>
+          <p>
+            <strong>LU4 · AI-tools.</strong> Ik heb Claude Code ingezet om het prototype in stappen
+            te bouwen en te testen, en AI gebruikt om mijn aantekeningen en vragenlijst te structureren.
+            De richting en de keuzes bepaalde ik zelf.
+          </p>
+          <p>
+            <strong>LU5 · Zelfsturend werken.</strong> Ik heb de meeting voorbereid, zelf bepaald wat
+            wel en niet in het prototype hoort, en de open vragen en aannames vastgelegd om met de
+            opdrachtgever te bespreken.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LINKS ============ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Bekijk ook</p>
+        <div class="project-links">
+          <a href="prototype/index.html" class="download" target="_blank" rel="noopener">Open het werkende prototype</a>
+        </div>
+        <p class="section__text" style="margin-top: 16px;">
+          Tip: bekijk het prototype op je telefoon, of maak je browservenster smal. Je kunt met één
+          klik van gebruiker wisselen via de demo-schakelaar.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Wout Maat — gemaakt voor de minor Future-proof met AI!</p>
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
