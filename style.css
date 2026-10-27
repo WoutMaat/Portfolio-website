@@ -425,6 +425,10 @@ img {
   border-color: var(--border);
 }
 
+.project-card[hidden] {
+  display: none;
+}
+
 .project-card__cover {
   aspect-ratio: 16 / 10;
   width: 100%;
