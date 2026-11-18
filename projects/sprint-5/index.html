@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sprint 5 — Wout Maat</title>
-  <meta name="description" content="Deze sprint volgt nog." />
+  <title>Sprint 5: van prototype naar echte applicatie — Wout Maat</title>
+  <meta name="description" content="De urenregistratie voor ICT Campus Foodvalley is geen prototype meer: een echte database met beveiliging, getest op Supabase, en het ontwerp op basis van de input van de nieuwe contactpersoon." />
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -22,46 +22,141 @@
       <div class="section__inner reveal">
         <div class="project-hero__meta">
           <span class="project-card__week">Week 9–10</span>
-          <span class="project-card__tag">Binnenkort</span>
+          <span class="project-card__tag">Praktijkoplossing</span>
         </div>
         <div class="project-hero">
-          <h1>Sprint 5</h1>
-          <p class="project-hero__lede">Deze sprint volgt nog.</p>
+          <h1>Sprint 5: van prototype naar echte applicatie</h1>
+          <p class="project-hero__lede">De urenregistratie voor ICT Campus Foodvalley is geen prototype meer. Deze sprint kreeg het een echte database met beveiliging, en verwerkte ik de input van de nieuwe contactpersoon in het ontwerp.</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ FOTO'S ============
-         Zet foto's in deze map met de naam photo-1.jpg, photo-2.jpg, photo-3.jpg, photo-4.jpg.
-         Ontbrekende foto's verdwijnen vanzelf — je hoeft niets aan te passen in de code. -->
+    <!-- ============ IN HET KORT ============ -->
     <section class="section">
       <div class="section__inner reveal">
-        <p class="section__label">Foto's</p>
-        <div class="gallery">
-          <div class="gallery__item"><img src="photo-1.jpg" alt="" onerror="this.parentElement.hidden=true;" /></div>
-          <div class="gallery__item"><img src="photo-2.jpg" alt="" onerror="this.parentElement.hidden=true;" /></div>
-          <div class="gallery__item"><img src="photo-3.jpg" alt="" onerror="this.parentElement.hidden=true;" /></div>
-          <div class="gallery__item"><img src="photo-4.jpg" alt="" onerror="this.parentElement.hidden=true;" /></div>
-        </div>
+        <p class="section__label">In het kort</p>
+        <h2 class="section__title">Van klikbaar voorbeeld naar iets waar echte uren in kunnen</h2>
+        <p class="section__text">
+          Tot nu toe was de urenregistratie een prototype met nepdata in de browser. Deze sprint heb ik
+          besloten dat het de echte applicatie wordt. Dat betekent dat de regels (wie mag wat zien, welk
+          tarief hoort bij welk uur) niet meer in de app zelf mogen zitten, maar in een database die ze
+          afdwingt. Daarvoor heb ik Supabase gebruikt, met servers in Europa.
+        </p>
+        <p class="section__text">
+          Tegelijk kwam er veel input van de nieuwe contactpersoon: hoe ze nu uren schrijven in Excel,
+          dat uren op <em>werkpakketten</em> moeten komen, dat het tarief per persoon vastligt en dat
+          per project instelbaar moet zijn wie het budget mag zien. Die input heb ik al verwerkt in de
+          database en in de app.
+        </p>
       </div>
     </section>
 
-    <!-- ============ UITLEG ============ -->
+    <!-- ============ DE ECHTE DATABASE ============ -->
     <section class="section section--alt">
       <div class="section__inner reveal">
-        <p class="section__label">Wat ik heb gedaan</p>
-        <h2 class="section__title">Aanpak</h2>
+        <p class="section__label">De database</p>
+        <h2 class="section__title">De regels zitten in de database, niet alleen in de app</h2>
         <p class="section__text">
-          Tekst volgt na afloop van de sprint.
+          Een app kan een knop verbergen, maar een gebruiker kan nog steeds proberen iets op te vragen
+          wat hij niet mag zien. Daarom dwingt de database zelf af wie wat mag. Een medewerker ziet
+          alleen zijn eigen uren, en niemand kan zelf een tarief op een urenregel zetten: de database
+          legt het tarief vast op het moment dat de uren worden geschreven.
+        </p>
+        <p class="section__text">
+          Alles wat ik deze sprint toevoegde, is meteen op een echte Supabase-database uitgeprobeerd:
+          werkpakketten onder een project, een persoonlijk tarief per lid, en een budget dat alleen de
+          beheerder ziet, tenzij die een lid daarvoor aanvinkt. In totaal controleer ik 73 situaties,
+          bijvoorbeeld &lsquo;kan een medewerker het tarief van een collega zien?&rsquo; (nee) en
+          &lsquo;kan iemand uren schrijven op een project waar hij geen lid van is?&rsquo; (nee).
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CONTROLEREN WAT AI SCHRIJFT ============ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Controleren wat AI schrijft</p>
+        <h2 class="section__title">De eerste testronde gaf een verkeerd beeld, in twee richtingen</h2>
+        <p class="section__text">
+          Claude schreef de database én de tests. Bij de eerste keer draaien op de echte database slaagden
+          41 van de 47 controles, en 6 faalden. Het bleek niet de database maar de test die fout was:
+          de test voerde een wijziging uit en controleerde het resultaat in dezelfde opdracht, waardoor
+          hij de wijziging nog niet kon zien.
+        </p>
+        <p class="section__text">
+          Bij het repareren bleek het omgekeerde ook voor te komen: drie controles gaven groen terwijl
+          ze eigenlijk niets controleerden, door dezelfde fout. Een groene test is dus geen bewijs
+          zolang je niet weet wat hij echt nagaat. Na het herschrijven slaagden alle 47, en de nieuwe
+          controles voor werkpakketten (26) slaagden meteen. Dat is voor mij de les van deze sprint:
+          AI schrijft snel, maar ik moet blijven vragen waarom iets slaagt.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ INPUT OPDRACHTGEVER ============ -->
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">Input van de opdrachtgever</p>
+        <h2 class="section__title">Van losse Excel-sheets naar werkpakketten, tarieven en budget</h2>
+        <p class="section__text">
+          De nieuwe contactpersoon stuurde de formats waarmee ze nu uren verantwoorden: een weekstaat,
+          een tabel per functie met tarief, uren en bedrag, en een lijst met datum, uren en
+          beschrijving. Uit die voorbeelden en haar antwoorden haalde ik wat de app moet kunnen:
+        </p>
+        <ul class="section__text">
+          <li><strong>Werkpakketten.</strong> Uren komen op een werkpakket (bijvoorbeeld werkpakket 7, 8 of projectleiding), niet meer als losse code in de omschrijving. De beheerder maakt ze aan.</li>
+          <li><strong>Tarief per persoon.</strong> Het tarief staat vast per persoon per project. Collega&rsquo;s zien elkaars tarief niet.</li>
+          <li><strong>Projectcontext.</strong> Bij een project horen budget, eisen en hoe de uren worden aangeleverd.</li>
+          <li><strong>Wie ziet het budget?</strong> Beheerders altijd, en per project ook de leden die de beheerder aanvinkt, bijvoorbeeld zzp&rsquo;ers die op kosten sturen.</li>
+        </ul>
+        <p class="section__text">
+          Nog te bouwen zijn de export in het format van de regeling, het importeren van uren uit Excel of
+          CSV (ook van partners die in Exact werken), bewijsstukken bij uren en een dashboard met budget
+          en uren per project.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ETHIEK ============ -->
+    <section class="section">
+      <div class="section__inner reveal">
+        <p class="section__label">Ethiek en verantwoord AI-gebruik</p>
+        <h2 class="section__title">Wat ik de AI wel en niet laat doen met andermans gegevens</h2>
+        <p class="section__text">
+          De urenregistratie bevat uren, tarieven en budgetten van een opdrachtgever. Dat vraagt om
+          afwegingen die niet in de code te zien zijn:
+        </p>
+        <ul class="section__text">
+          <li><strong>Privacy in het ontwerp.</strong> Een medewerker ziet alleen zijn eigen uren, collega&rsquo;s zien elkaars persoonlijke tarief niet, en het budget is alleen zichtbaar voor beheerders en voor leden die de beheerder aanvinkt. De database dwingt dat af, ook als iemand om de app heen probeert te gaan.</li>
+          <li><strong>Wat ik met de AI deel.</strong> Geheime sleutels (bijvoorbeeld voor de mail) komen niet bij de AI terecht; die voer ik zelf in. De voorbeeldformats van de opdrachtgever bevatten voornamen en namen van organisaties. Die heb ik alleen gebruikt om het ontwerp af te stemmen en niet op deze openbare site gezet.</li>
+          <li><strong>Waar de gegevens staan.</strong> De database staat in een Europese regio en hoort uiteindelijk op naam van de opdrachtgever te staan, zodat de gegevens en de verantwoordelijkheid bij hen liggen. De code staat niet op GitHub, omdat er projectgegevens in terechtkomen.</li>
+          <li><strong>Ik blijf zelf verantwoordelijk.</strong> Wat de AI bouwt en test, is niet vanzelf juist (zie hierboven). Daarom controleer ik wat een test echt nagaat, draai ik tests alleen op een database zonder echte gegevens, en schrijf ik eerlijk op wat bewezen is en wat nog niet.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ WAT NOG NIET AF IS ============ -->
+    <section class="section section--alt">
+      <div class="section__inner reveal">
+        <p class="section__label">Eerlijk over de stand van zaken</p>
+        <h2 class="section__title">Wat bewezen is en wat nog moet</h2>
+        <p class="section__text">
+          <strong>Bewezen:</strong> de database met beveiliging en regels draait op een echt
+          Supabase-project en slaagt voor 73 controles. De app heeft eigen tests voor alle schermen en
+          voor de koppeling met de database (37 en 45 controles).
+        </p>
+        <p class="section__text">
+          <strong>Nog niet bewezen:</strong> de app draait nog in demo-modus met nepdata. Het
+          daadwerkelijk inloggen, het versturen van uitnodigingsmails en de aansluiting van de app op
+          de echte database test ik in een volgende sprint. Pas daarna kan ik zeggen dat het werkt voor
+          echte gebruikers.
         </p>
       </div>
     </section>
 
     <!-- ============ LEERUITKOMSTEN ============
-         Zet lu-pill--done op elke LU die je deze sprint hebt aangetoond. Laat 'm weg (of laat de
-         class leeg) voor een leeruitkomst die deze sprint niet aan bod kwam.
-         Heeft een docent een LU goedgekeurd? Zet er dan ook lu-pill--approved bij (naast
-         lu-pill--done) — dat toont automatisch een groen vinkje op die pil. -->
+         lu-pill--done = aangetoond; lu-pill--approved erbij zodra een docent het heeft goedgekeurd.
+         Deze sprint: LU2, LU3 en LU4 aangetoond. -->
     <section class="section">
       <div class="section__inner reveal">
         <p class="section__label">Leeruitkomsten</p>
@@ -70,38 +165,43 @@
           <div class="lu-pill">
             <span class="lu-pill__mark">1</span>
             <span><span class="lu-pill__code">LU1 — AI Impact</span><span class="lu-pill__label">AI-impact op de beroepspraktijk analyseren</span></span>
-            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
-              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
-          <div class="lu-pill">
+          <div class="lu-pill lu-pill--done">
             <span class="lu-pill__mark">2</span>
             <span><span class="lu-pill__code">LU2 — AI Praktijkoplossing</span><span class="lu-pill__label">Praktijkgerichte AI-oplossing ontwerpen &amp; realiseren</span></span>
-            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
-              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
-          <div class="lu-pill">
+          <div class="lu-pill lu-pill--done">
             <span class="lu-pill__mark">3</span>
             <span><span class="lu-pill__code">LU3 — AI Ethiek</span><span class="lu-pill__label">Ethiek en verantwoord AI-gebruik beoordelen</span></span>
-            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
-              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
-          <div class="lu-pill">
+          <div class="lu-pill lu-pill--done">
             <span class="lu-pill__mark">4</span>
             <span><span class="lu-pill__code">LU4 — AI Tools</span><span class="lu-pill__label">AI-tools en technieken gebruiken</span></span>
-            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
-              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
           <div class="lu-pill">
             <span class="lu-pill__mark">5</span>
             <span><span class="lu-pill__code">LU5 — Zelfsturend werken</span><span class="lu-pill__label">Zelfstandig en zelfsturend werken</span></span>
-            <span class="lu-pill__approved" title="Goedgekeurd door docent" aria-label="Goedgekeurd door docent">
-              <svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
           </div>
+        </div>
+        <div class="lu-explain">
+          <p>
+            <strong>LU2 · Praktijkoplossing.</strong> Ik heb de urenregistratie omgezet van prototype naar
+            een echte applicatie met een beveiligde database, en het ontwerp aangepast op de wensen van
+            de opdrachtgever: werkpakketten, tarief per persoon en budget per project.
+          </p>
+          <p>
+            <strong>LU3 · Ethiek en verantwoord gebruik.</strong> Ik heb beoordeeld welke gegevens
+            gevoelig zijn en dat in de database afgedwongen (collega&rsquo;s zien elkaars tarief niet,
+            budget alleen voor wie het mag zien). Ik heb afgewogen wat ik met de AI deel en wat niet,
+            gekozen voor een Europese regio, en eerlijk vastgelegd wat bewezen is en wat niet.
+          </p>
+          <p>
+            <strong>LU4 · AI-tools.</strong> Ik gebruikte Claude Code met een directe koppeling naar
+            Supabase om de database op te zetten, de tests te draaien en de beveiligingsadviezen te
+            controleren. Daarnaast legde ik in een projectbestand vast hoe de code eruit moet zien, zodat
+            de AI zich daaraan houdt. Ik controleerde de uitkomst kritisch: de eerste testronde bleek zelf
+            fouten te bevatten.
+          </p>
         </div>
       </div>
     </section>
